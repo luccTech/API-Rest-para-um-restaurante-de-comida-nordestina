@@ -2,9 +2,9 @@
 
 🧪 **Desafio ADS-Labs – API de Pratos Nordestinos**
 
-Visando meu aprendizado e crescimento como desenvolvedor, estou criando uma API como parte de um desafio da **ADS-Labs**. Resolvi concentrar minhas energias aqui mesmo no **Nordeste**, tomando como base a rica culinária nordestina para desenvolver algo com identidade e propósito.
+Viso criar uma API para um desafio da ADS-Labs, onde concentro minhas energias aqui mesmo no Nordeste e irei tomar os pratos nordestinos como base para essa aprendizagem. O objetivo aqui é criar uma API que controla pratos e pedidos dos clientes.
 
-O objetivo deste projeto é criar uma **API REST** que controla **pratos típicos nordestinos** e **pedidos de clientes**, simulando o funcionamento de um sistema simples de pedidos gastronômicos.
+O objetivo deste projeto é criar uma **API REST** que controla **pratos típicos nordestinos** e **pedidos de clientes**, simulando o funcionamento de um sistema simples de pedidos.
 
 ---
 
