@@ -5,6 +5,7 @@ const { sequelize, Prato } = require('./models');
 const pratoRoutes = require('./routes/pratoRoutes');
 const clienteRoutes = require('./routes/clienteRoutes');
 const pedidoRoutes = require('./routes/pedidoRoutes');
+const relatorioRoutes = require('./routes/relatorioRoutes');
 
 const app = express();
 const PORT = 3000;
@@ -21,7 +22,8 @@ app.get('/', (req, res) => {
     rotas: {
       pratos: '/api/pratos',
       clientes: '/api/clientes',
-      pedidos: '/api/pedidos'
+      pedidos: '/api/pedidos',
+      relatorios: '/api/relatorios'
     }
   });
 });
@@ -29,6 +31,7 @@ app.get('/', (req, res) => {
 app.use('/api/pratos', pratoRoutes);
 app.use('/api/clientes', clienteRoutes);
 app.use('/api/pedidos', pedidoRoutes);
+app.use('/api/relatorios', relatorioRoutes);
 
 // Inicializar servidor
 async function startServer() {

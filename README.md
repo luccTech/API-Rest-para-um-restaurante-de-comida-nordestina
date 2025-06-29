@@ -107,14 +107,15 @@ A documentação completa está disponível no arquivo `documentacao.txt` na rai
 
 ### Criar um Cliente
 ```bash
-curl -X POST http://localhost:3000/api/clientes \
-  -H "Content-Type: application/json" \
-  -d '{
-    "nome": "João Silva",
-    "cpf": "12345678901",
-    "email": "joao@email.com",
-    "telefone": "(81) 99999-1111"
-  }'
+POST http://localhost:3000/api/clientes
+Headers: Content-Type: application/json
+Body:
+{
+  "nome": "José Pereira",
+  "cpf": "11122233344",
+  "email": "jose.pereira@email.com",
+  "telefone": "(81) 99999-6666"
+}
 ```
 
 ### Criar um Pedido
