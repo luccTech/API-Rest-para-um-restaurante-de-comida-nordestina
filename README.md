@@ -120,27 +120,29 @@ Body:
 
 ### Criar um Pedido
 ```bash
-curl -X POST http://localhost:3000/api/pedidos \
-  -H "Content-Type: application/json" \
-  -d '{
-    "clienteId": 1,
-    "pratos": [
-      {
-        "pratoId": 1,
-        "quantidade": 2
-      },
-      {
-        "pratoId": 3,
-        "quantidade": 1
-      }
-    ],
-    "observacoes": "Sem cebola no baião"
-  }'
-```
+POST http://localhost:3000/api/pedidos
+Headers: Content-Type: application/json
+Body:
+{
+  "clienteId": 1,
+  "status": "pendente",
+  "total": 45.40,
+  "observacoes": "Sem cebola e com mais pimenta",
+  "itens": [
+    {
+      "pratoId": 1,
+      "quantidade": 2
+    },
+    {
+      "pratoId": 3,
+      "quantidade": 1
+    }
+  ]
+}
 
 ### Gerar Relatório
 ```bash
-curl http://localhost:3000/api/relatorios/top-clientes-gasto
+get http://localhost:3000/api/relatorios/top-clientes-gasto
 ```
 
 ---
