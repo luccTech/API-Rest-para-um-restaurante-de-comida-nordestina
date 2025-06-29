@@ -156,6 +156,7 @@ Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para ma
 ## 👨‍💻 Autor
 
 **ADS-Labs** - Desafio de desenvolvimento de API REST
+
 **Lucas Barbosa Barreto** - Quem realizou o desafio
 
 ---
