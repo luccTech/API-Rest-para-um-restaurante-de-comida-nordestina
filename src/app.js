@@ -42,7 +42,7 @@ async function startServer() {
       preco: 8.00,
       categoria: 'entrada'
     });
-    console.log('✅ Banco sincronizado e Cuscuz inserido!');
+    console.log('✅ Banco sincronizado e Cuscuz inserido!'); // gosto de enfeitar, eu me divirto
     app.listen(PORT, () => {
       console.log(`🚀 Servidor rodando na porta ${PORT}`);
     });
