@@ -18,7 +18,7 @@ app.use(express.json());
 // Rotas
 app.get('/', (req, res) => {
   res.json({
-    message: '🍽️ API do Restaurante Nordestino',
+    message: '🍽️ API do Restaurante Nordestino', // a api vai com mts enfeites pq sou do front kakak
     version: '3.0.0',
     rotas: {
       pratos: '/api/pratos',
@@ -39,11 +39,11 @@ async function startServer() {
   try {
     await sequelize.authenticate();
     
-    // Forçar recriação do banco (remover em produção)
+    // recriar o banco to usando para meus testes
     await sequelize.sync({ force: true });
     console.log('✅ Banco recriado com sucesso!');
     
-    // Popular com todos os dados dos seeds originais
+    // Popular com todos os dados dos seedAll
     await seedAll();
     
     app.listen(PORT, () => {

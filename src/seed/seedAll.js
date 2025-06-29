@@ -74,8 +74,8 @@ async function seedAll() {
     await ItemPedido.bulkCreate(itensPedidos);
     console.log('✅ 8 itens de pedidos criados');
 
-    console.log('🎉 População completa finalizada!');
-    console.log(`📊 Resumo: ${await Cliente.count()} clientes, ${await Prato.count()} pratos, ${await Pedido.count()} pedidos, ${await ItemPedido.count()} itens`);
+    console.log('População completa finalizada!');
+    console.log(`Resumo: ${await Cliente.count()} clientes, ${await Prato.count()} pratos, ${await Pedido.count()} pedidos, ${await ItemPedido.count()} itens`);
 
   } catch (error) {
     console.error('❌ Erro ao popular banco:', error);
