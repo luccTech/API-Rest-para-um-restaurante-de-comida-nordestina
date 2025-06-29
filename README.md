@@ -1,4 +1,4 @@
-# 🍽️ API REST - Restaurante de Comida Nordestina
+# 🍽️ API REST - Restaurante de Comida Nordestina 
 
 🧪 **Desafio ADS-Labs – API de Pratos Nordestinos**
 
@@ -42,6 +42,7 @@ O objetivo deste projeto é criar uma **API REST** que controla **pratos típico
 
 | Prato | Categoria | Preço | Descrição |
 |-------|-----------|-------|-----------|
+| Cuscuz | Entrada | R$ 8,00 | Massa de milho cozida no vapor, o melhor!!! |
 | Baião de Dois | Principal | R$ 25,90 | Arroz com feijão verde, queijo coalho e carne seca |
 | Carne de Sol | Principal | R$ 32,50 | Carne salgada e seca ao sol com mandioca |
 | Vatapá | Principal | R$ 28,00 | Prato baiano com pão, camarão e leite de coco |
@@ -50,7 +51,6 @@ O objetivo deste projeto é criar uma **API REST** que controla **pratos típico
 | Sarapatel | Principal | R$ 22,00 | Prato pernambucano com vísceras de porco |
 | Buchada de Bode | Principal | R$ 35,00 | Prato típico do sertão |
 | Tapioca | Entrada | R$ 12,00 | Massa de goma de mandioca recheada |
-| Cuscuz | Entrada | R$ 8,00 | Massa de milho cozida no vapor |
 | Queijo Coalho | Entrada | R$ 15,00 | Queijo típico assado na brasa |
 | Bolo de Rolo | Sobremesa | R$ 18,00 | Bolo pernambucano com goiabada |
 | Cocada | Sobremesa | R$ 6,00 | Doce de coco ralado |
