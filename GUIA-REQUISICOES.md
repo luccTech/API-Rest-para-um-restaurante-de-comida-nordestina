@@ -1,6 +1,6 @@
 # 🚀 Guia de Requisições - API Restaurante Nordestino
 
-## 📋 Como fazer requisições (estou fazendo no bruno)
+## 📋 Como fazer requisições (estou fazendo no bruno) mas insomia e postman tambem irão funcionar
 
 ### 1. Requisições GET (Buscar dados)
 

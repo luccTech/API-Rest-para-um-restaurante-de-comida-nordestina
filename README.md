@@ -36,11 +36,6 @@ O objetivo deste projeto é criar uma **API REST** que controla **pratos típico
 2. **Top 5 Clientes por Pedidos**: Clientes que mais fizeram pedidos
 3. **Top 5 Clientes por Gasto**: Clientes que mais gastaram
 
-### ✅ Relatórios Extras
-- **Relatório Geral de Vendas**: Total de vendas, pedidos, ticket médio
-- **Faturamento por Período**: Análise temporal de faturamento
-- **Status dos Pedidos**: Controle de fluxo (pendente → preparando → pronto → entregue)
-
 ---
 
 ## 🍽️ Pratos Nordestinos Incluídos
@@ -62,41 +57,6 @@ O objetivo deste projeto é criar uma **API REST** que controla **pratos típico
 | Caldo de Cana | Bebida | R$ 5,00 | Suco extraído da cana-de-açúcar |
 | Cajuína | Bebida | R$ 7,00 | Bebida típica do Piauí |
 | Mungunzá | Sobremesa | R$ 12,00 | Prato com milho branco e leite de coco |
-
----
-
-## 🛠️ Instalação e Configuração
-
-### Pré-requisitos
-- Node.js (versão 14 ou superior)
-- npm ou yarn
-
-### Passos para Instalação
-
-1. **Clone o repositório**
-```bash
-git clone https://github.com/seu-usuario/API-Rest-para-um-restaurante-de-comida-nordestina.git
-cd API-Rest-para-um-restaurante-de-comida-nordestina
-```
-
-2. **Instale as dependências**
-```bash
-npm install
-```
-
-3. **Execute o servidor**
-```bash
-# Modo desenvolvimento (com nodemon)
-npm run dev
-
-# Modo produção
-npm start
-```
-
-4. **Acesse a API**
-```
-http://localhost:3000
-```
 
 ---
 
@@ -141,10 +101,6 @@ A documentação completa está disponível no arquivo `documentacao.txt` na rai
 - **pedidos**: Pedidos dos clientes (cliente, status, total, observações)
 - **pedido_pratos**: Relacionamento entre pedidos e pratos (quantidade, preço)
 
-### Relacionamentos
-- Cliente → Pedidos (1:N)
-- Pedido → Pratos (N:N através de pedido_pratos)
-
 ---
 
 ## 🔍 Exemplos de Uso
@@ -188,39 +144,6 @@ curl http://localhost:3000/api/relatorios/top-clientes-gasto
 
 ---
 
-## 🧪 Testando a API
-
-### Com Insomnia
-1. Importe a coleção de requests (se disponível)
-2. Configure a base URL: `http://localhost:3000`
-3. Teste os endpoints seguindo a documentação
-
-### Com curl
-```bash
-# Testar se a API está funcionando
-curl http://localhost:3000
-
-# Listar todos os pratos
-curl http://localhost:3000/api/pratos
-
-# Listar todos os clientes
-curl http://localhost:3000/api/clientes
-```
-
----
-
-## 🎯 Funcionalidades Extras Implementadas
-
-- **Segurança**: Helmet para headers de segurança
-- **Rate Limiting**: Limite de 100 requests por 15 minutos
-- **CORS**: Configurado para permitir requisições cross-origin
-- **Validações**: Validação de dados de entrada
-- **Transações**: Uso de transações para operações complexas
-- **Tratamento de Erros**: Middleware de tratamento de erros
-- **Logs**: Logs informativos no console
-
----
-
 ## 📝 Licença
 
 Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
@@ -230,22 +153,7 @@ Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para ma
 ## 👨‍💻 Autor
 
 **ADS-Labs** - Desafio de desenvolvimento de API REST
-
----
-
-## 🤝 Contribuição
-
-1. Faça um fork do projeto
-2. Crie uma branch para sua feature (`git checkout -b feature/AmazingFeature`)
-3. Commit suas mudanças (`git commit -m 'Add some AmazingFeature'`)
-4. Push para a branch (`git push origin feature/AmazingFeature`)
-5. Abra um Pull Request
-
----
-
-## 📞 Suporte
-
-Se você encontrar algum problema ou tiver dúvidas, abra uma issue no repositório.
+**Lucas Barbosa Barreto** - Quem realizou o desafio
 
 ---
 
