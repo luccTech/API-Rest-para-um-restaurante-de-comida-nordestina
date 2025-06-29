@@ -9,6 +9,7 @@ module.exports = {
       });
       res.json(pedidos);
     } catch (error) {
+      console.error('Erro ao listar pedidos:', error);
       res.status(500).json({ error: 'Erro ao listar pedidos' });
     }
   },
@@ -23,6 +24,7 @@ module.exports = {
       }
       res.json(pedido);
     } catch (error) {
+      console.error('Erro ao buscar pedido:', error);
       res.status(500).json({ error: 'Erro ao buscar pedido' });
     }
   },
@@ -86,6 +88,7 @@ module.exports = {
       
       res.status(201).json(pedidoComCliente);
     } catch (error) {
+      console.error('Erro ao criar pedido:', error);
       res.status(500).json({ error: 'Erro ao criar pedido' });
     }
   },
@@ -116,6 +119,7 @@ module.exports = {
       
       res.json(pedidoAtualizado);
     } catch (error) {
+      console.error('Erro ao atualizar status do pedido:', error);
       res.status(500).json({ error: 'Erro ao atualizar status do pedido' });
     }
   },
@@ -130,6 +134,7 @@ module.exports = {
       await pedido.destroy();
       res.json({ message: 'Pedido deletado com sucesso' });
     } catch (error) {
+      console.error('Erro ao deletar pedido:', error);
       res.status(500).json({ error: 'Erro ao deletar pedido' });
     }
   }

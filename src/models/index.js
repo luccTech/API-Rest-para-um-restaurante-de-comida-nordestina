@@ -23,10 +23,6 @@ ItemPedido.belongsTo(Pedido, { foreignKey: 'pedidoId' });
 Prato.hasMany(ItemPedido, { foreignKey: 'pratoId' });
 ItemPedido.belongsTo(Prato, { foreignKey: 'pratoId' });
 
-// Relacionamento many-to-many entre Pedido e Prato através de ItemPedido
-Pedido.belongsToMany(Prato, { through: ItemPedido, foreignKey: 'pedidoId' });
-Prato.belongsToMany(Pedido, { through: ItemPedido, foreignKey: 'pratoId' });
-
 module.exports = {
   sequelize,
   Prato,

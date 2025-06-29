@@ -6,6 +6,7 @@ module.exports = {
       const pratos = await Prato.findAll({ order: [['id', 'ASC']] });
       res.json(pratos);
     } catch (error) {
+      console.error('Erro ao listar pratos:', error);
       res.status(500).json({ error: 'Erro ao listar pratos' });
     }
   },
@@ -18,6 +19,7 @@ module.exports = {
       }
       res.json(prato);
     } catch (error) {
+      console.error('Erro ao buscar prato:', error);
       res.status(500).json({ error: 'Erro ao buscar prato' });
     }
   },
@@ -52,6 +54,7 @@ module.exports = {
       });
       res.status(201).json(prato);
     } catch (error) {
+      console.error('Erro ao criar prato:', error);
       res.status(500).json({ error: 'Erro ao criar prato' });
     }
   },
@@ -79,6 +82,7 @@ module.exports = {
       await prato.update({ nome, descricao, preco, categoria, disponivel });
       res.json(prato);
     } catch (error) {
+      console.error('Erro ao atualizar prato:', error);
       res.status(500).json({ error: 'Erro ao atualizar prato' });
     }
   },
@@ -93,6 +97,7 @@ module.exports = {
       await prato.destroy();
       res.json({ message: 'Prato deletado com sucesso' });
     } catch (error) {
+      console.error('Erro ao deletar prato:', error);
       res.status(500).json({ error: 'Erro ao deletar prato' });
     }
   }

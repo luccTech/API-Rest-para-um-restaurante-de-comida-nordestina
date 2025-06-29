@@ -1,6 +1,7 @@
 const express = require('express');
 const cors = require('cors');
 const { sequelize, Prato } = require('./models');
+const seedAll = require('./seed/seedAll');
 
 const pratoRoutes = require('./routes/pratoRoutes');
 const clienteRoutes = require('./routes/clienteRoutes');
@@ -37,8 +38,14 @@ app.use('/api/relatorios', relatorioRoutes);
 async function startServer() {
   try {
     await sequelize.authenticate();
-    await sequelize.sync();
-    console.log('✅ Banco sincronizado!');
+    
+    // Forçar recriação do banco (remover em produção)
+    await sequelize.sync({ force: true });
+    console.log('✅ Banco recriado com sucesso!');
+    
+    // Popular com todos os dados dos seeds originais
+    await seedAll();
+    
     app.listen(PORT, () => {
       console.log(`🚀 Servidor rodando na porta ${PORT}`);
     });
