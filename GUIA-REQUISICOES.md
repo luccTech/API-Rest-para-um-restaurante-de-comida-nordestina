@@ -1,39 +1,39 @@
 # 🚀 Guia de Requisições - API Restaurante Nordestino
 
-## 📋 Como fazer requisições no Bruno
+## 📋 Como fazer requisições (estou fazendo no bruno)
 
 ### 1. Requisições GET (Buscar dados)
 
 #### Ver informações da API:
 ```
-GET http://localhost:3001/
+GET http://localhost:3000/
 ```
 
 #### Listar todos os pratos:
 ```
-GET http://localhost:3001/api/pratos
+GET http://localhost:3000/api/pratos
 ```
 
 #### Buscar prato específico:
 ```
-GET http://localhost:3001/api/pratos/1
+GET http://localhost:3000/api/pratos/1
 ```
 
 #### Listar todos os clientes:
 ```
-GET http://localhost:3001/api/clientes
+GET http://localhost:3000/api/clientes
 ```
 
 #### Listar todos os pedidos:
 ```
-GET http://localhost:3001/api/pedidos
+GET http://localhost:3000/api/pedidos
 ```
 
 ### 2. Requisições POST (Criar dados)
 
 #### Criar novo prato:
 ```
-POST http://localhost:3001/api/pratos
+POST http://localhost:3000/api/pratos
 Headers: Content-Type: application/json
 Body:
 {
@@ -47,7 +47,7 @@ Body:
 
 #### Criar novo cliente:
 ```
-POST http://localhost:3001/api/clientes
+POST http://localhost:3000/api/clientes
 Headers: Content-Type: application/json
 Body:
 {
@@ -60,7 +60,7 @@ Body:
 
 #### Criar novo pedido:
 ```
-POST http://localhost:3001/api/pedidos
+POST http://localhost:3000/api/pedidos
 Headers: Content-Type: application/json
 Body:
 {
@@ -70,18 +70,3 @@ Body:
   "observacoes": "Sem cebola e com mais pimenta"
 }
 ```
-
-## 🎯 Passos no Bruno:
-
-1. **Abra o Bruno**
-2. **Crie uma nova coleção**
-3. **Configure a URL base**: `http://localhost:3001`
-4. **Crie requisições** usando os exemplos acima
-5. **Para POST**: Adicione o header `Content-Type: application/json`
-6. **Para POST**: Adicione o body em formato JSON
-
-## ✅ Teste primeiro:
-1. `GET http://localhost:3001/` - Deve retornar informações da API
-2. `GET http://localhost:3001/api/pratos` - Deve retornar lista de pratos
-
-Boa sorte! 🍽️ 

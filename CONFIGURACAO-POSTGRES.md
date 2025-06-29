@@ -1,56 +1,29 @@
-# 🐘 Configuração PostgreSQL - API Restaurante Nordestino
+# 🗄️ Configuração Banco de Dados - API Restaurante Nordestino
 
-## 📋 Passos para configurar:
+## 📋 Configuração Atual (SQLite):
 
-### 1. Instalar PostgreSQL no Kali Linux:
-```bash
-sudo apt update
-sudo apt install postgresql postgresql-contrib
-```
-
-### 2. Iniciar o serviço:
-```bash
-sudo systemctl start postgresql
-sudo systemctl enable postgresql
-```
-
-### 3. Acessar o PostgreSQL:
-```bash
-sudo -u postgres psql
-```
-
-### 4. Criar banco e usuário:
-```sql
-CREATE DATABASE restaurante_nordestino;
-CREATE USER postgres WITH PASSWORD 'sua_senha';
-GRANT ALL PRIVILEGES ON DATABASE restaurante_nordestino TO postgres;
-\q
-```
-
-### 5. Instalar dependências Node.js:
+### 1. Instalar dependências Node.js:
 ```bash
 npm install
 ```
 
-### 6. Executar o servidor:
+### 2. Executar o servidor:
 ```bash
-node app.js
+npm start
 ```
 
 ## 🎯 Configurações no código:
 
-**Arquivo:** `app.js`
+**Arquivo:** `src/models/index.js`
 ```javascript
-const sequelize = new Sequelize('restaurante_nordestino', 'postgres', 'sua_senha', {
-  host: 'localhost',
-  dialect: 'postgres',
+const sequelize = new Sequelize({
+  dialect: 'sqlite',
+  storage: path.join(__dirname, '../../database.sqlite'),
   logging: false
 });
 ```
 
-**Altere:**
-- `'sua_senha'` pela senha que você definiu
-- `'postgres'` pelo usuário que você criou
+**Banco de dados:** SQLite (arquivo local `database.sqlite`)
 
 ## 🍽️ Pratos que serão inseridos (Cuscuz em primeiro!):
 
@@ -84,7 +57,41 @@ npm start
 npm run dev
 
 # Executar diretamente
-node app.js
+node src/app.js
+```
+
+## 🔄 Para usar PostgreSQL (opcional):
+
+Se quiser usar PostgreSQL em vez de SQLite:
+
+1. Instalar PostgreSQL:
+```bash
+sudo apt update
+sudo apt install postgresql postgresql-contrib
+```
+
+2. Configurar banco:
+```bash
+sudo -u postgres psql
+CREATE DATABASE restaurante_nordestino;
+CREATE USER postgres WITH PASSWORD 'sua_senha';
+GRANT ALL PRIVILEGES ON DATABASE restaurante_nordestino TO postgres;
+\q
+```
+
+3. Alterar configuração em `src/models/index.js`:
+```javascript
+const sequelize = new Sequelize(
+  process.env.DB_NAME || 'restaurante_nordestino',
+  process.env.DB_USERNAME || 'postgres',
+  process.env.DB_PASSWORD || 'sua_senha',
+  {
+    host: process.env.DB_HOST || 'localhost',
+    port: process.env.DB_PORT || 5432,
+    dialect: 'postgres',
+    logging: false
+  }
+);
 ```
 
 Boa sorte! 🍽️ 
