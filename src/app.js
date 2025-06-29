@@ -35,10 +35,10 @@ async function startServer() {
   try {
     await sequelize.authenticate();
     await sequelize.sync({ force: true });
-    // Inserir Cuscuz em primeiro
+    // Inserir Cuscuz em primeiro sempre!!!!!
     await Prato.create({
       nome: 'Cuscuz',
-      descricao: 'Massa de milho cozida no vapor, servida com manteiga - O melhor do Nordeste!',
+      descricao: 'servida com manteiga - O melhor do Nordeste!',
       preco: 8.00,
       categoria: 'entrada'
     });
