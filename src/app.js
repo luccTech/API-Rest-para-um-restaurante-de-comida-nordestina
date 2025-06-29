@@ -34,15 +34,8 @@ app.use('/api/pedidos', pedidoRoutes);
 async function startServer() {
   try {
     await sequelize.authenticate();
-    await sequelize.sync({ force: true });
-    // Inserir Cuscuz em primeiro sempre!!!!!
-    await Prato.create({
-      nome: 'Cuscuz',
-      descricao: 'servida com manteiga - O melhor do Nordeste!',
-      preco: 8.00,
-      categoria: 'entrada'
-    });
-    console.log('✅ Banco sincronizado e Cuscuz inserido!'); // gosto de enfeitar, eu me divirto
+    await sequelize.sync();
+    console.log('✅ Banco sincronizado!');
     app.listen(PORT, () => {
       console.log(`🚀 Servidor rodando na porta ${PORT}`);
     });

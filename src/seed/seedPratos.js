@@ -5,7 +5,7 @@ async function seedPratos() {
   const pratos = [
     {
       nome: 'Cuscuz',
-      descricao: 'Massa de milho cozida no vapor', // sempre em primeiro lugar o cuscuz
+      descricao: 'Massa de milho cozida no vapor, o melhor não tem jeito!!!', // sempre em primeiro lugar o cuscuz
       preco: 8.00,
       categoria: 'entrada'
     }, // o restante peguei na internet kakkaka
