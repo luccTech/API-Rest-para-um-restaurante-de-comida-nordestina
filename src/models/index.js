@@ -1,23 +1,29 @@
-const { Sequelize } = require('sequelize');
-const Cliente = require('./Cliente');
-const Prato = require('./Prato');
-const Pedido = require('./Pedido');
-const PedidoPrato = require('./PedidoPrato');
+require('dotenv').config();
+const { Sequelize, DataTypes } = require('sequelize');
 
-// Usar a instância do sequelize do Cliente (todos usam a mesma)
-const sequelize = Cliente.sequelize;
+const sequelize = new Sequelize(
+  process.env.DB_NAME || 'restaurante_nordestino',
+  process.env.DB_USERNAME || 'postgres',
+  process.env.DB_PASSWORD || 'sua_senha',
+  {
+    host: process.env.DB_HOST || 'localhost',
+    port: process.env.DB_PORT || 5432,
+    dialect: 'postgres',
+    logging: false
+  }
+);
 
-// Definir associações
+const Prato = require('./Prato')(sequelize, DataTypes);
+const Cliente = require('./Cliente')(sequelize, DataTypes);
+const Pedido = require('./Pedido')(sequelize, DataTypes);
+
+// Associações
 Cliente.hasMany(Pedido, { foreignKey: 'clienteId' });
 Pedido.belongsTo(Cliente, { foreignKey: 'clienteId' });
 
-Pedido.belongsToMany(Prato, { through: PedidoPrato, foreignKey: 'pedidoId' });
-Prato.belongsToMany(Pedido, { through: PedidoPrato, foreignKey: 'pratoId' });
-
 module.exports = {
   sequelize,
-  Cliente,
   Prato,
-  Pedido,
-  PedidoPrato
+  Cliente,
+  Pedido
 }; 
